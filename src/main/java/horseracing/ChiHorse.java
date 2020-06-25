@@ -1,22 +1,20 @@
 package horseracing;
 
-import java.util.Random;
-
 public class ChiHorse implements Horse {
 
     private Runnable runnable;
-    private Random random;
     private String location;
     private String name;
     private HorseScreen screen;
+    private int randomCnt;
 
 
     public ChiHorse(String type) {
         location = type;
         name = type;
-        random = new Random();
         screen = new HorseScreen();
     }
+
     @Override
     public String getName() {
         return name;
@@ -33,7 +31,8 @@ public class ChiHorse implements Horse {
         new Thread(runnable = () -> {
             while (location.length() < 110) {
                 screen.prinfInfo(this);
-                for (int i = 0; i < random.nextInt(10); i++) {
+                randomCnt = (int) (Math.random() * 10);
+                for (int i = 0; i < randomCnt; i++) {
                     location = " " + location;
                 }
                 try {
@@ -47,7 +46,7 @@ public class ChiHorse implements Horse {
 
             while (location.length() > 110 && location.length() < 150) {
                 screen.prinfInfo(this);
-                for (int i = 0; i < 4; i++) {
+                for (int i = 0; i < 3; i++) {
                     location = " " + location;
                 }
                 try {

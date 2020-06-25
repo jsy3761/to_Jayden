@@ -1,7 +1,7 @@
 package horseracing;
 
 public class HorseMain {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         HorseFactory horseFactory = new HorseFactory();
         HorseScreen horseScreen = new HorseScreen();
 
@@ -16,6 +16,7 @@ public class HorseMain {
         jeju.run();
         america.run();
         china.run();
+
 
     }
 }

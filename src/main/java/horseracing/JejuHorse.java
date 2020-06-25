@@ -1,22 +1,20 @@
 package horseracing;
 
-import java.util.Random;
-
 public class JejuHorse implements Horse {
 
     private Runnable runnable;
-    private Random random;
     private String location;
     private String name;
+    private int randomCnt;
     private HorseScreen screen;
 
 
     public JejuHorse(String type) {
         location = type;
         name = type;
-        random = new Random();
         screen = new HorseScreen();
     }
+
     @Override
     public String getName() {
         return name;
@@ -33,7 +31,9 @@ public class JejuHorse implements Horse {
         new Thread(runnable = () -> {
             while (location.length() < 110) {
                 screen.prinfInfo(this);
-                for (int i = 0; i < random.nextInt(12); i++) {
+
+                randomCnt = (int) (Math.random() * 12);
+                for (int i = 0; i < randomCnt; i++) {
                     location = " " + location;
                 }
                 try {
