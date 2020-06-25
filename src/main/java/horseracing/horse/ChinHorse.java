@@ -1,6 +1,5 @@
 package horseracing.horse;
 
-import horseracing.runnable.AmerRunnable;
 import horseracing.runnable.ChinRunnable;
 import horseracing.runnable.HorseRunnable;
 

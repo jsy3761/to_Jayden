@@ -8,20 +8,15 @@ import java.util.List;
 
 public class HorseSimulator {
 
-    private Runnable runnable;
+    private List<Horse> horseList;
 
-    private List<Horse> horseList = new ArrayList<>();
-
-    private List<String> score = new ArrayList<>();
+    private List<String> score;
 
     private int endCnt;
 
-    public int getEndCnt() {
-        return endCnt;
-    }
-
-    public List<Horse> getHorseList() {
-        return horseList;
+    public HorseSimulator(){
+        horseList = new ArrayList<>();
+        score = new ArrayList<>();
     }
 
     public void resiHorse(Horse horse) {
@@ -63,7 +58,6 @@ public class HorseSimulator {
             }
         }
     }
-
 
     public void endGame() {
         System.out.println("==========경기가 종료되었습니다.==========");

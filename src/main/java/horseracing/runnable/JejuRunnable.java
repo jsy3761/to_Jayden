@@ -1,7 +1,6 @@
 package horseracing.runnable;
 
 import horseracing.horse.SleepTime;
-import horseracing.runnable.HorseRunnable;
 
 public class JejuRunnable implements HorseRunnable {
 

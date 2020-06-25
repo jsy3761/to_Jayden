@@ -1,10 +1,9 @@
 package horseracing;
 
 import horseracing.horse.Horse;
-import horseracing.horse.SleepTime;
 
 public class HorseMain {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args){
         HorseFactory horseFactory = new HorseFactory();
         Horse jeju = horseFactory.createHorse("jeju");
         Horse amer = horseFactory.createHorse("amer");
