@@ -10,15 +10,11 @@ public class HorseMain {
         Horse chin = horseFactory.createHorse("chin");
 
         HorseSimulator simulator = new HorseSimulator();
-        simulator.resiHorse(jeju);
-        simulator.resiHorse(amer);
-        simulator.resiHorse(chin);
+        simulator.resistHorse(jeju);
+        simulator.resistHorse(amer);
+        simulator.resistHorse(chin);
 
         simulator.startRacing();
-
-
-
-
 
     }
 }

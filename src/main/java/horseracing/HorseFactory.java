@@ -9,6 +9,7 @@ public class HorseFactory {
 
     public Horse createHorse(String type){
         Horse horse;
+
         switch (type){
             case "jeju":
                 horse = new JejuHorse(type);
