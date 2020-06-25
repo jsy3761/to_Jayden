@@ -7,9 +7,9 @@ import horseracing.horse.JejuHorse;
 
 public class HorseFactory {
 
-    public Horse createHorse(String type){
-        Horse horse;
+    private Horse horse;
 
+    public Horse createHorse(String type){
         switch (type){
             case "jeju":
                 horse = new JejuHorse(type);
@@ -23,7 +23,6 @@ public class HorseFactory {
             default:
                 horse = null;
         }
-
         return horse;
     }
 

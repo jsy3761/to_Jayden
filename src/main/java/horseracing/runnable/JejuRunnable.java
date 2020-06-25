@@ -4,15 +4,18 @@ import horseracing.horse.SleepTime;
 
 public class JejuRunnable implements HorseRunnable {
 
+    private String location;
+    private int randomCnt;
+    private boolean end;
+
     public JejuRunnable(String type) {
         location = type;
     }
 
-    private String location;
-
-    private int randomCnt;
-
-    private boolean end;
+    @Override
+    public String getLocation() {
+        return location;
+    }
 
     @Override
     public void run() {
@@ -38,21 +41,18 @@ public class JejuRunnable implements HorseRunnable {
                 e.printStackTrace();
             }
         }
+
     }
 
     @Override
     public boolean endCheck() {
-        if (location.length() <= 150){
+        if (location.length() <= 150) {
             end = false;
-        }else {
+        } else {
             end = true;
         }
         return end;
     }
 
-    @Override
-    public String getLocation() {
-        return location;
-    }
 }
 

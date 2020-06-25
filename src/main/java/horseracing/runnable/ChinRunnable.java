@@ -4,15 +4,18 @@ import horseracing.horse.SleepTime;
 
 public class ChinRunnable implements HorseRunnable {
 
+    private String location;
+    private int randomCnt;
+    private boolean end;
+
     public ChinRunnable(String type) {
         location = type;
     }
 
-    private String location;
-
-    private int randomCnt;
-
-    private boolean end;
+    @Override
+    public String getLocation() {
+        return location;
+    }
 
     @Override
     public void run() {
@@ -50,9 +53,5 @@ public class ChinRunnable implements HorseRunnable {
         return end;
     }
 
-    @Override
-    public String getLocation() {
-        return location;
-    }
 }
 

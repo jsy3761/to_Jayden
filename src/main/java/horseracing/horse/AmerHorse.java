@@ -6,7 +6,6 @@ import horseracing.runnable.HorseRunnable;
 public class AmerHorse implements Horse {
 
     private HorseRunnable horseRunnable;
-
     private String name;
 
     public AmerHorse(String type) {

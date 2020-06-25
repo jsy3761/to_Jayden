@@ -12,7 +12,7 @@ public class HorseSimulator {
     private List<String> score;
     private int endCnt;
 
-    public HorseSimulator() {
+    public HorseSimulator(){
         horseList = new ArrayList<>();
         score = new ArrayList<>();
     }
@@ -24,28 +24,25 @@ public class HorseSimulator {
 
     public void startRacing() {
         System.out.println("===========경기 시작===========");
-        for (Horse h : horseList) {
-            h.start();
-            new Thread(() -> {
-                while (!h.getHorseRunnable().endCheck()) {
-
-                    System.out.println(h.getHorseRunnable().getLocation());
-                    try {
-                        Thread.sleep(SleepTime.TIME.getTime());
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+            for (Horse h : horseList) {
+                h.start();
+                new Thread(() -> {
+                    while (!h.getHorseRunnable().endCheck()) {
+                        System.out.println(h.getHorseRunnable().getLocation());
+                        try {
+                            Thread.sleep(SleepTime.TIME.getTime());
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
-                }
+                    System.out.println(h.getName() + "도착!!");
+                    endCnt++;
+                    score.add(h.getName());
+                }).start();
+            }
 
-                System.out.println(h.getName() + "도착!!");
-                endCnt++;
-                score.add(h.getName());
-
-            }).start();
-        }
-
-        while (true) {
-            if (endCnt == horseList.size()) {
+        while (true){
+            if (endCnt == horseList.size()){
                 endGame();
                 break;
             }
@@ -59,9 +56,11 @@ public class HorseSimulator {
 
     public void endGame() {
         System.out.println("==========경기가 종료되었습니다.==========");
+
         for (int i = 0; i < endCnt; i++) {
             System.out.println(i + 1 + "등 : " + score.get(i));
         }
-        System.out.println("안녕히 가십시오.");
+
+        System.out.println("============안녕히 가십시오.============");
     }
 }
